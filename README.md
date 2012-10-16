@@ -9,8 +9,10 @@ iOS 6 introduced the "share sheet"—a simple native interface to launch actions
 // init Readability activity
 ReadabilityActivity *rdb = [[ReadabilityActivity alloc] init];
 
-// set up activity item / action. url is a NSURL
-NSArray *activityItems = @[ReadabilityActivityAdd, url];
+NSURL *url = [NSURL URLWithSting:@"http://example.com"];
+
+// set up activity item / action
+NSArray *activityItems = @[url];
 
 // init share sheet with app-specific activity
 UIActivityViewController *shareSheet = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[rdb]];
